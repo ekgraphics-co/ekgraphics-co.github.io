@@ -22,18 +22,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="site-header">
-        <h1>ek graphics</h1>
-        <div class="header-actions">
-            <a href="mailto:contact@ekgraphics.store" class="button">contact@ekgraphics.store</a>
-        </div>
-    </header>
+    <div data-partial="header"></div>
 
     <section id="projects" class="gallery-section">
+        <header class="section-header">
+            <h2>Projects</h2>
+            <p>A selection of recent graphics work across print and digital projects.</p>
+        </header>
         <div class="gallery-grid">
             <article class="gallery-card">
                 <img src="img/graphics/What's For Dinner.webp" alt="Project 1 preview">
@@ -49,9 +49,8 @@
         </div>
     </section>
 
-    <footer class="site-footer">
-        <p>Est. 2026, Bryn Athyn, PA</p>
-    </footer>
+    <div data-partial="footer"></div>
+    <script src="js/load-partials.js"></script>
 </body>
 
 </html>

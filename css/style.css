@@ -121,6 +121,18 @@ textarea {
 body{
   background-color: var(--color-light);
   padding: 5%;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+  will-change: opacity;
+}
+
+body.page-ready {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -173,29 +185,40 @@ p {
   margin: 0;
 }
 
-.site-header .header-actions {
+.site-nav {
   display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
   align-items: center;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
 }
 
-.button {
+.site-nav a {
   font-family: var(--font-family-body, "Lato", sans-serif);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem 1.25rem;
-  border-radius: var(--radius);
+  color: var(--color-dark);
   text-decoration: none;
-  font-weight: 700;
-  border: none;
-  background: var(--color-secondary);
-  color: var(--color-light);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
-.button:hover,
-.button:focus-visible {
-  transform: translateY(-1px);
+@media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--color-primary);
 }
 
 .gallery-section {
