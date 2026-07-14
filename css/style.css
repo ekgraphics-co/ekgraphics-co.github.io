@@ -12,7 +12,7 @@
    ========================================================================== */
 
 html {
-  color: #222;
+  color: var(--color-text);
   font-size: 1em;
   line-height: 1.4;
 }
@@ -25,12 +25,12 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
+  background: var(--color-selection);
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: var(--color-selection);
   text-shadow: none;
 }
 
@@ -42,7 +42,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--color-border-muted);
   margin: 1em 0;
   padding: 0;
 }
@@ -83,6 +83,170 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+:root {
+  --color-primary: #0752c4;
+  --color-secondary: #54647c;
+  --color-tertiary: #EB8E2F;
+  --color-quaternary: #D07417;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+  --color-warning: #ffc107;
+  --color-info: #17a2b8;
+  --color-light: #fffefa;
+  --color-dark: #343a40;
+
+  --color-text: #222222;
+  --color-text-muted: rgba(0, 0, 0, 0.75);
+  --color-border-muted: #cccccc;
+  --color-selection: #b3d4fc;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f6f9ff;
+  --color-secondary-soft: rgba(103, 216, 250, 0.16);
+  --color-card-border: rgba(7, 82, 196, 0.12);
+  --color-print-bg: #ffffff;
+  --color-print-text: #000000;
+
+  --weight-h1: 800;
+  --weight-h2: 700;
+  --weight-h3: 600;
+  --weight-h4: 500;
+
+  --weight-body: 400;
+  --weight-strong: 700;
+
+  --radius: 10px;
+}
+
+body{
+  background-color: var(--color-light);
+  padding: 5%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-family-heading, "Lato", sans-serif);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 {
+  font-weight: var(--weight-h1);
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-weight: var(--weight-h2);
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: var(--weight-h3);
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-weight: var(--weight-h4);
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: var(--font-family-body, "Lato", sans-serif);
+  font-weight: var(--weight-body);
+  margin-bottom: 1rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  background: transparent;
+}
+
+.site-header h1 {
+  font-size: 2rem;
+  font-weight: var(--weight-h1);
+  margin: 0;
+}
+
+.site-header .header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  font-family: var(--font-family-body, "Lato", sans-serif);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 700;
+  border: none;
+  background: var(--color-secondary);
+  color: var(--color-light);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.gallery-section {
+  margin: 3rem 0;
+}
+
+.section-header {
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+}
+
+.section-header p {
+  margin-top: 0.5rem;
+  color: var(--color-text-muted);
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.gallery-card {
+  flex: 1 1 min(280px, 100%);
+  min-width: 220px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-card-border);
+  background: var(--color-surface);
+  transition: transform 0.25s ease;
+}
+
+.gallery-card:hover,
+.gallery-card:focus-within {
+  transform: scale(1.01);
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.site-footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  text-align: left;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
 
 /* ==========================================================================
    Helper classes
@@ -188,8 +352,8 @@ textarea {
   *,
   *::before,
   *::after {
-    background: #fff !important;
-    color: #000 !important;
+    background: var(--color-print-bg) !important;
+    color: var(--color-print-text) !important;
     /* Black prints faster */
     box-shadow: none !important;
     text-shadow: none !important;
@@ -223,7 +387,7 @@ textarea {
 
   pre,
   blockquote {
-    border: 1px solid #999;
+    border: 1px solid var(--color-border-muted);
     page-break-inside: avoid;
   }
 
