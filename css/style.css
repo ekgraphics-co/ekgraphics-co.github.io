@@ -245,6 +245,7 @@ p {
 .gallery-card {
   flex: 1 1 min(280px, 100%);
   min-width: 220px;
+  max-width: 400px;
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid var(--color-card-border);
@@ -262,6 +263,34 @@ p {
   width: 100%;
   height: auto;
   object-fit: contain;
+  cursor: zoom-in;
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(10, 10, 10, 0.92);
+  cursor: zoom-out;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+.fullscreen-overlay.active {
+  opacity: 1;
+}
+
+.fullscreen-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
 }
 
 .site-footer {
