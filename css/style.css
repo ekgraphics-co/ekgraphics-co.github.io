@@ -125,9 +125,11 @@ textarea {
 
 body{
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: var(--color-light);
   padding: 0 5%;
-  min-height: 100vh;
   opacity: 0;
   transition: opacity 0.35s ease-in-out;
   will-change: opacity;
@@ -135,8 +137,13 @@ body{
 }
 
 .site-main {
-  min-height: calc(100vh - 2rem);
-  padding: 5% 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 3rem 0;
+}
+
+.site-footer {
+  margin-top: auto;
 }
 
 body.page-ready {
