@@ -296,7 +296,7 @@ p {
   width: 100%;
   overflow: hidden;
   border-radius: var(--radius);
-  border: 1px solid color-mix(in srgb, var(--color-accent-2) 12%, transparent);
+  border: 2px solid color-mix(in srgb, var(--color-accent) 12%, transparent);
   background: var(--color-background);
   transition: transform 0.25s ease;
   box-sizing: border-box;
