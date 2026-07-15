@@ -91,11 +91,11 @@ textarea {
 
 :root {
   /* --color-primary: #0752c4; */
-  --color-primary: #ffffff;
-  --color-accent: #eb8e2f;
-  --color-accent-2: #d07417;
-  --color-background: #070a10;
-  --color-text: #cccccc;
+  --color-primary: #0f43b4;
+  --color-accent: #417cf3;
+  --color-accent-2: #e4790d;
+  --color-background: #fbfbfb;
+  --color-text: #061638;
 
   --weight-h1: 800;
   --weight-h2: 700;
