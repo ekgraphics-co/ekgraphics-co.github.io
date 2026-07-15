@@ -140,7 +140,7 @@ body.fade-out {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: var(--font-family-heading, "Lato", sans-serif);
+  font-family: var(--font-family-heading, "Lexend", sans-serif);
   color: var(--color-primary);
   line-height: 1.2;
   margin-top: 0;
@@ -167,7 +167,7 @@ h4 {
 }
 
 p {
-  font-family: var(--font-family-body, "Lato", sans-serif);
+  font-family: var(--font-family-body, "Lexend", sans-serif);
   font-weight: var(--weight-body);
   margin-bottom: 1rem;
 }
@@ -189,6 +189,17 @@ p {
   margin: 0;
 }
 
+.site-brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.site-brand a {
+  display: inline-flex;
+  align-items: center;
+}
+
 .site-brand img,
 .site-brand svg {
   display: block;
@@ -197,8 +208,10 @@ p {
 }
 
 .site-brand svg {
+  width: 100%;
   max-width: 160px;
   height: auto;
+  overflow: visible;
 }
 
 .site-nav {
@@ -211,7 +224,7 @@ p {
 }
 
 .site-nav a {
-  font-family: var(--font-family-body, "Lato", sans-serif);
+  font-family: var(--font-family-body, "Lexend", sans-serif);
   color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
