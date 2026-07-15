@@ -6,28 +6,38 @@
   <title>Page Not Found</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    :root {
+      --color-primary: #0752c4;
+      --color-accent: #eb8e2f;
+      --color-accent-2: #d07417;
+      --color-background: #fffefa;
+      --color-text: #222222;
+    }
+
     * {
       line-height: 1.2;
       margin: 0;
     }
 
     html {
-      color: #888;
+      color: color-mix(in srgb, var(--color-text) 55%, transparent);
       display: table;
       font-family: sans-serif;
       height: 100%;
       text-align: center;
       width: 100%;
+      background: var(--color-background);
     }
 
     body {
       display: table-cell;
       vertical-align: middle;
       margin: 2em auto;
+      background: var(--color-background);
     }
 
     h1 {
-      color: #555;
+      color: color-mix(in srgb, var(--color-text) 75%, transparent);
       font-size: 2em;
       font-weight: 400;
     }

@@ -30,12 +30,12 @@ html {
  */
 
 ::-moz-selection {
-  background: var(--color-selection);
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
   text-shadow: none;
 }
 
 ::selection {
-  background: var(--color-selection);
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
   text-shadow: none;
 }
 
@@ -47,7 +47,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid var(--color-border-muted);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 25%, transparent);
   margin: 1em 0;
   padding: 0;
 }
@@ -90,27 +90,12 @@ textarea {
    ========================================================================== */
 
 :root {
-  --color-primary: #0752c4;
-  --color-secondary: #54647c;
-  --color-tertiary: #EB8E2F;
-  --color-quaternary: #D07417;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
-  --color-light: #fffefa;
-  --color-dark: #343a40;
-
-  --color-text: #222222;
-  --color-text-muted: rgba(0, 0, 0, 0.75);
-  --color-border-muted: #cccccc;
-  --color-selection: #b3d4fc;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f6f9ff;
-  --color-secondary-soft: rgba(103, 216, 250, 0.16);
-  --color-card-border: rgba(7, 82, 196, 0.12);
-  --color-print-bg: #ffffff;
-  --color-print-text: #000000;
+  /* --color-primary: #0752c4; */
+  --color-primary: #ffffff;
+  --color-accent: #eb8e2f;
+  --color-accent-2: #d07417;
+  --color-background: #070a10;
+  --color-text: #cccccc;
 
   --weight-h1: 800;
   --weight-h2: 700;
@@ -128,7 +113,7 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--color-light);
+  background-color: var(--color-background);
   padding: 0 5%;
   opacity: 0;
   transition: opacity 0.35s ease-in-out;
@@ -139,7 +124,7 @@ body{
 .site-main {
   flex: 1 1 auto;
   min-height: 0;
-  padding: 3rem 0;
+  /* padding: 3rem 0; */
 }
 
 .site-footer {
@@ -192,7 +177,7 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   padding: 1rem 0;
   width: 100%;
   background: transparent;
@@ -204,10 +189,16 @@ p {
   margin: 0;
 }
 
-.site-brand img {
+.site-brand img,
+.site-brand svg {
   display: block;
-  height: 2.5rem;
+  height: 3.5rem;
   width: auto;
+}
+
+.site-brand svg {
+  max-width: 160px;
+  height: auto;
 }
 
 .site-nav {
@@ -221,7 +212,7 @@ p {
 
 .site-nav a {
   font-family: var(--font-family-body, "Lato", sans-serif);
-  color: var(--color-dark);
+  color: var(--color-text);
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap;
@@ -243,11 +234,11 @@ p {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .gallery-section {
-  margin: 3rem 0;
+  margin: 0;
 }
 
 .section-header {
@@ -257,7 +248,7 @@ p {
 
 .section-header p {
   margin-top: 0.5rem;
-  color: var(--color-text-muted);
+  color: color-mix(in srgb, var(--color-text) 75%, transparent);
 }
 
 .gallery-grid {
@@ -273,8 +264,8 @@ p {
   max-width: 400px;
   overflow: hidden;
   border-radius: var(--radius);
-  border: 1px solid var(--color-card-border);
-  background: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-accent-2) 12%, transparent);
+  background: var(--color-background);
   transition: transform 0.25s ease;
   box-sizing: border-box;
   padding: 0;
@@ -310,7 +301,7 @@ p {
 
 .gallery-card p {
   margin: 0;
-  color: var(--color-text-muted);
+  color: color-mix(in srgb, var(--color-text) 75%, transparent);
   line-height: 1.35;
 }
 
@@ -322,7 +313,7 @@ p {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background: rgba(10, 10, 10, 0.92);
+  background: color-mix(in srgb, var(--color-text) 92%, transparent);
   cursor: zoom-out;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
@@ -338,15 +329,19 @@ p {
   width: auto;
   height: auto;
   border-radius: var(--radius);
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--color-text) 35%, transparent);
 }
 
 .site-footer {
   margin-top: 3rem;
   padding: 1.5rem 0;
   text-align: left;
-  color: var(--color-text-muted);
+  color: color-mix(in srgb, var(--color-text) 75%, transparent);
   font-size: 0.95rem;
+}
+
+#ek-logo{
+  color: var(--color-primary);
 }
 
 /* ==========================================================================
@@ -442,71 +437,3 @@ p {
   (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: var(--color-print-bg) !important;
-    color: var(--color-print-text) !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid var(--color-border-muted);
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-
