@@ -313,7 +313,7 @@ p {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background: color-mix(in srgb, var(--color-text) 92%, transparent);
+  background: color-mix(in srgb, var(--color-background) 92%, transparent);
   cursor: zoom-out;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
