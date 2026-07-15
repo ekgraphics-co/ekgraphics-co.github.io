@@ -67,6 +67,10 @@ function handleFullscreenClick(event) {
     return false;
   }
 
+  if (image.closest('.about-gallery')) {
+    return false;
+  }
+
   var isOverlayOpen = document.querySelector('.fullscreen-overlay');
   if (isOverlayOpen) {
     closeFullscreenOverlay();
